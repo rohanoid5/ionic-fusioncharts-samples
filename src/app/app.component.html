@@ -1,0 +1,10 @@
+<ion-app>
+  <!-- <div class="chart-style">
+    <fusioncharts width="100%" height="350" type="Column2D" dataFormat="JSON" [dataSource]="dataSource"></fusioncharts>
+  </div> -->
+  <ul class="list">
+    <li *ngFor="let item of items">
+      <span class="badge">{{item.id}}</span> {{item.value}}
+    </li>
+  </ul>
+</ion-app>
