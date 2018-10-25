@@ -12,6 +12,7 @@
 
 .chart-container {
   display: flex;
+  width: 100%;
 }
 
 .chart {
@@ -29,4 +30,8 @@
 .btn-placement {
   float: right;
   margin-right: 20px;
+}
+
+.btn-margin {
+  margin-top: 8px;
 }

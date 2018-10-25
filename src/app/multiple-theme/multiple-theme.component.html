@@ -1,4 +1,21 @@
-<p>
-  multiple-theme works!
-</p>
+<div class="chart-container">
+  <fusioncharts class="chart" width="100%" height="70%" type="Column2D" dataFormat="JSON" [dataSource]="dataSource"
+    (initialized)="initialized($event)">
+  </fusioncharts>
+</div>
+<div id="select-text">Choose a theme:</div>
+<div style='display: flex; justify-content: space-evenly; flex-wrap: wrap;'>
+  <a [ngClass]='(theme !== "fusion")? "blue darken-4 btn-small btn-placement btn-margin" : "btn disabled btn-small btn-placement btn-margin"'
+    (click)='onSelectionChange("fusion")'>Fusion</a>
+  <a [ngClass]='(theme !== "gammel")? "blue darken-4 btn-small btn-placement btn-margin" : "btn disabled btn-small btn-placement btn-margin"'
+    (click)='onSelectionChange("gammel")'>Gammel</a>
+  <a [ngClass]='(theme !== "candy")? "blue darken-4 btn-small btn-placement btn-margin" : "btn disabled btn-small btn-placement btn-margin"'
+    (click)='onSelectionChange("candy")'>Candy</a>
+  <a [ngClass]='(theme !== "zune")? "blue darken-4 btn-small btn-placement btn-margin" : "btn disabled btn-small btn-placement btn-margin"'
+    (click)='onSelectionChange("zune")'>Zune</a>
+  <a [ngClass]='(theme !== "ocean")? "blue darken-4 btn-small btn-placement btn-margin" : "btn disabled btn-small btn-placement btn-margin"'
+    (click)='onSelectionChange("ocean")'>Ocean</a>
+  <a [ngClass]='(theme !== "carbon")? "blue darken-4 btn-small btn-placement btn-margin" : "btn disabled btn-small btn-placement btn-margin"'
+    (click)='onSelectionChange("carbon")'>Carbon</a>
+</div>
 <a class="waves-effect waves-light btn-small btn-placement" (click)='onClickBack()'>Back</a>

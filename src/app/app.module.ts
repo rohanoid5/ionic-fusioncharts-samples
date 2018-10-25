@@ -15,7 +15,15 @@ import { FusionChartsModule } from 'angular-fusioncharts';
 // Import FusionCharts library and chart modules
 import * as FusionCharts from 'fusioncharts';
 import * as Charts from 'fusioncharts/fusioncharts.charts';
-import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import * as Widgets from 'fusioncharts/fusioncharts.widgets';
+import * as Fusion from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import * as Ocean from 'fusioncharts/themes/fusioncharts.theme.ocean';
+import * as Fint from 'fusioncharts/themes/fusioncharts.theme.fint';
+import * as Gammel from 'fusioncharts/themes/fusioncharts.theme.gammel';
+import * as Candy from 'fusioncharts/themes/fusioncharts.theme.candy';
+import * as Zune from 'fusioncharts/themes/fusioncharts.theme.zune';
+import * as Carbon from 'fusioncharts/themes/fusioncharts.theme.carbon';
+
 import { PlainColumnComponent } from './plain-column/plain-column.component';
 import { PieChart3DComponent } from './pie-chart3-d/pie-chart3-d.component';
 import { UpdateChartDataComponent } from './update-chart-data/update-chart-data.component';
@@ -25,10 +33,31 @@ import { GaugeComponent } from './gauge/gauge.component';
 import { ChangeChartTypeComponent } from './change-chart-type/change-chart-type.component';
 import { MultipleThemeComponent } from './multiple-theme/multiple-theme.component';
 
-FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme);
+FusionChartsModule.fcRoot(
+  FusionCharts,
+  Charts,
+  Widgets,
+  Fusion,
+  Ocean,
+  Fint,
+  Gammel,
+  Candy,
+  Zune,
+  Carbon
+);
 
 @NgModule({
-  declarations: [AppComponent, PlainColumnComponent, PieChart3DComponent, UpdateChartDataComponent, EventListenComponent, DrillDownComponent, GaugeComponent, ChangeChartTypeComponent, MultipleThemeComponent],
+  declarations: [
+    AppComponent,
+    PlainColumnComponent,
+    PieChart3DComponent,
+    UpdateChartDataComponent,
+    EventListenComponent,
+    DrillDownComponent,
+    GaugeComponent,
+    ChangeChartTypeComponent,
+    MultipleThemeComponent
+  ],
   entryComponents: [],
   imports: [
     BrowserModule,
