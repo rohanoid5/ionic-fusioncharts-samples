@@ -16,11 +16,19 @@ import { FusionChartsModule } from 'angular-fusioncharts';
 import * as FusionCharts from 'fusioncharts';
 import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import { PlainColumnComponent } from './plain-column/plain-column.component';
+import { PieChart3DComponent } from './pie-chart3-d/pie-chart3-d.component';
+import { UpdateChartDataComponent } from './update-chart-data/update-chart-data.component';
+import { EventListenComponent } from './event-listen/event-listen.component';
+import { DrillDownComponent } from './drill-down/drill-down.component';
+import { GaugeComponent } from './gauge/gauge.component';
+import { ChangeChartTypeComponent } from './change-chart-type/change-chart-type.component';
+import { MultipleThemeComponent } from './multiple-theme/multiple-theme.component';
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme);
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PlainColumnComponent, PieChart3DComponent, UpdateChartDataComponent, EventListenComponent, DrillDownComponent, GaugeComponent, ChangeChartTypeComponent, MultipleThemeComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

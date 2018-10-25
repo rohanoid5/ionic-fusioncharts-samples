@@ -9,6 +9,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+  isChartSelected: Boolean;
+  selectedItem: any;
   dataSource: Object;
   title: string;
   items: any[] = [
@@ -50,6 +52,16 @@ export class AppComponent {
         { label: 'China', value: '30' }
       ]
     };
+  }
+
+  onSelect(item: any): void {
+    this.selectedItem = item;
+    this.isChartSelected = true;
+    console.log(this.selectedItem.id);
+  }
+
+  onNotify(isChartSelected: boolean): void {
+    this.isChartSelected = isChartSelected;
   }
 
   initializeApp() {

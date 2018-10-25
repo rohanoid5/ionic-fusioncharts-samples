@@ -1,10 +1,21 @@
 <ion-app>
-  <!-- <div class="chart-style">
-    <fusioncharts width="100%" height="350" type="Column2D" dataFormat="JSON" [dataSource]="dataSource"></fusioncharts>
-  </div> -->
-  <ul class="list">
-    <li *ngFor="let item of items">
-      <span class="badge">{{item.id}}</span> {{item.value}}
-    </li>
-  </ul>
+  <ion-content scroll="true" ng-controller="CategoriesCtrl" overflow-scroll="true">
+    <ion-list *ngIf="!isChartSelected">
+      <ion-item class="list-pad" *ngFor="let item of items">
+        <div class="card blue-grey darken-1 card-item" (click)="onSelect(item)">
+          <div class="card-content white-text">
+            <span class="card-title">{{item.value}}</span>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+    <app-plain-column (notify)='onNotify($event)' *ngIf="isChartSelected && selectedItem.id == 1"></app-plain-column>
+    <app-pie-chart3-d (notify)='onNotify($event)' *ngIf="isChartSelected && selectedItem.id == 2"></app-pie-chart3-d>
+    <app-update-chart-data (notify)='onNotify($event)' *ngIf="isChartSelected && selectedItem.id == 3"></app-update-chart-data>
+    <app-event-listen (notify)='onNotify($event)' *ngIf="isChartSelected && selectedItem.id == 4"></app-event-listen>
+    <app-drill-down (notify)='onNotify($event)' *ngIf="isChartSelected && selectedItem.id == 5"></app-drill-down>
+    <app-gauge (notify)='onNotify($event)' *ngIf="isChartSelected && selectedItem.id == 6"></app-gauge>
+    <app-change-chart-type (notify)='onNotify($event)' *ngIf="isChartSelected && selectedItem.id == 7"></app-change-chart-type>
+    <app-multiple-theme (notify)='onNotify($event)' *ngIf="isChartSelected && selectedItem.id == 8"></app-multiple-theme>
+  </ion-content>
 </ion-app>
