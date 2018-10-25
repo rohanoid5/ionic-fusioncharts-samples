@@ -1,4 +1,7 @@
-<p>
-  event-listen works!
-</p>
+<div class="chart-container">
+  <fusioncharts class="chart" width="100%" height="70%" type="Column2D" dataFormat="JSON" [dataSource]="dataSource"
+    (dataplotClick)="update($event)">
+  </fusioncharts>
+</div>
+<p style="font-size: 18px;font-weight: 300;padding: 10px;background: #efefef;text-align: center">{{ selectedValue }}</p>
 <a class="waves-effect waves-light btn-small btn-placement" (click)='onClickBack()'>Back</a>
